@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.selected-day {
+   border: 2px solid #9333ea; /* purple-600 */
+   background-color: #f3e8ff; /* purple-100 */
+ }
+
+ body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer utilities {
+  .scale-90 {
+    transform: scale(0.9);
+  }
+  .scale-100 {
+    transform: scale(1);
+  }
+}

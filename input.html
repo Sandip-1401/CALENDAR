@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnyaTime</title>
+
+  <link href="./src/output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center h-screen font-[Inter]">
+
+
+   <div id="intro-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-tl bg-purple-300 from-purple-800 transition-opacity duration-1000">
+      <h1 class="intro-title text-6xl text-white font-extrabold opacity-0 scale-90 transition duration-1000">
+        Calendar🍥🌺
+      </h1>
+    </div>
+    
+
+    <div id="main-content" class="hidden">
+
+      <div class="flex justify-between items-center max-w-4xl mx-auto mt-6 px-4">
+         <button id="prev-month" class="px-2 py-0.5 text-center bg-purple-500 text-white rounded hover:bg-purple-600 text-3xl">&larr;</button>
+         <h1 id="currectMonth" class="text-4xl font-bold text-purple-600  text-center">Welcome to your Calendar 🗓️</h1>
+         <button id="next-month" class="px-2 py-0.5 text-center bg-purple-500 text-white rounded hover:bg-purple-600 text-3xl">&rarr;</button>
+      </div>
+
+      
+
+      <div class="p-4 max-w-4xl mx-auto mt-8">
+         <div class="bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl shadow-xl p-6 transition-all duration-500">
+       
+           <div class="grid grid-cols-7 gap-3 text-lg sm:text-xl text-center font-semibold text-gray-700 mb-4">
+             <div class="hover:text-purple-600 transition">Sun</div>
+             <div class="hover:text-purple-600 transition">Mon</div>
+             <div class="hover:text-purple-600 transition">Tue</div>
+             <div class="hover:text-purple-600 transition">Wed</div>
+             <div class="hover:text-purple-600 transition">Thu</div>
+             <div class="hover:text-purple-600 transition">Fri</div>
+             <div class="hover:text-purple-600 transition">Sat</div>
+           </div>
+       
+           <div id="calendar-days" class="grid grid-cols-7 gap-3 text-center text-base sm:text-lg text-gray-900 mt-2 px-2">
+             <!-- Calendar dates here -->
+           </div>
+       
+         </div>
+       </div>
+       
+
+
+       <div id="event-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+         <div class="bg-white/70 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl p-6 w-full max-w-md relative transition-all duration-500">
+       
+         <button id="close-modal"  class="absolute top-2 right-5 text-gray-500 hover:text-red-500 text-3xl">&times;</button>
+
+         <div id="event-list" class="space-y-2 max-h-48 overflow-y-auto mb-4">
+
+         </div>
+
+         <h2 class="text-2xl font-bold mb-4 text-purple-600">Add Event</h2>
+
+         <form id="event-form" class="space-y-4">
+            <input type="text" placeholder="Event Title" id="event-title" class="w-full p-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition duration-200">
+
+            <input type="time" id="event-time" class="w-full p-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition duration-200">
+            
+            <textarea placeholder="Description" id="event-desc" class="w-full p-3 border border-purple-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition duration-200"></textarea>
+            
+            <div class="flex items-center gap-3">
+              <label for="event-color" class="text-gray-600 font-medium">Choose Theam color:</label>
+              <input type="color" id="event-color" class="w-10 h-7 border border-gray-300 rounded-lg cursor-pointer shadow-sm">
+            </div>
+            
+
+
+            <button id="add-event" type="submit" class="w-full bg-purple-600 text-white px-4 py-3 rounded-xl hover:bg-purple-700 shadow-md transition duration-300 ">Save Event</button>
+
+         </form>
+      </div>
+    </div>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
+
+<!-- npx tailwindcss -i ./src/CSS/input.css -o ./src/CSS/output.css --watch -->
